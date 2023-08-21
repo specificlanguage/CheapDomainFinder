@@ -1,17 +1,15 @@
-<script>
+<script lang="ts">
 
+    import {domain} from "../stores.js";
 
-    function handleClick(event) {
-        alert(event)
-    }
-
-
+    let domain_name: string;
+    export let handleClick: () => void;
 
 </script>
 
 
 <form>
-    <input class="domain-input" type="text" id="domain" name="domain" placeholder="Enter domain..." required/>
+    <input class="domain-input" type="text" id="domain" name="domain" placeholder="Enter domain..." required bind:value={$domain}/>
     <button class="submit-button" type="submit" on:click={handleClick}>Submit</button>
 </form>
 
