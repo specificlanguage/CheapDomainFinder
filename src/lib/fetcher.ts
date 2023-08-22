@@ -1,28 +1,9 @@
-function updateOptions(options: RequestInit) {
-    const update: RequestInit = {...options};
-    if (localStorage.getItem("uuid")) {
-        update.headers = {
-            ...update.headers,
-            'Authorization': `${localStorage.getItem("uuid")}`
-        }
-    }
-
-    if(typeof options.body == "object"){
-        update.headers = {
-            ...update.headers,
-            'Content-Type': "application/json"
-        }
-    }
-
-
-    return update
-}
-
 export default async function fetcher(path: string, options?: RequestInit) {
-    return fetch(path, updateOptions(options ?? {})).then(async res => {
+    return fetch(path, options).then(async res => {
+        const data = await res.json()
         if (!res.ok) {
-            throw new Error(res.statusText);
+            throw new Error(JSON.stringify(data));
         }
-        return res.json();
+        return data;
     })
 }
