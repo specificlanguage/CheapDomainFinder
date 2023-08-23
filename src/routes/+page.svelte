@@ -5,13 +5,13 @@
 <main class="container">
     <h1>Domain Finder</h1>
     <h3>Find a domain for a great price.</h3>
-    <SearchList/>
 </main>
+<SearchList/>
 
 <style>
     .container {
-        width: 75vh;
         align-content: center;
+        margin-bottom: 2em;
     }
 </style>
 
