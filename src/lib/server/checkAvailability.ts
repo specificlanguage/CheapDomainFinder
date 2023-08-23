@@ -12,8 +12,7 @@ export async function checkAvailability (domain: string) {
   const url = `https://domain-checker7.p.rapidapi.com/whois?domain=${domain}`;
   try {
     const response = await fetch(url, options);
-    const result = await response.json();
-    return result;
+    return await response.json();
   } catch (error) {
     return error;
   }
