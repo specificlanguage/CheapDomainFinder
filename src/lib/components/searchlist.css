@@ -1,0 +1,12 @@
+div.unavailable-box {
+    border-radius: 0.5rem;
+    border: 8px black;
+    background: #d26161;
+    color: white;
+    margin: 2rem;
+}
+
+div.unavailable-text {
+    padding: 2.5rem;
+    font-size: 18px;
+}

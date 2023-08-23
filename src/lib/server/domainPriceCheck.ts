@@ -15,17 +15,17 @@ export async function queryGoDaddy(domain_name: string) {
 	return fetcher(URL, { headers: headers })
 		.then(async (r) => {
 			const { available, price, currency } = r;
-			console.log(r);
 			return {
 				isAvailable: available,
 				...(available && {
-					price: price
+					price: price,
+					url: `https://www.godaddy.com/domainsearch/find?checkAvail=1&domainToCheck=${domain_name}`
 				})
 			};
 		})
 		.catch((r) => {
 			return {
-				error: JSON.parse(r.error)
+				error: r
 			};
 		});
 }
