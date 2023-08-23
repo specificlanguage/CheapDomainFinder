@@ -6,6 +6,18 @@ div.unavailable-box {
 }
 
 div.unavailable-text {
-    padding: 2.5rem;
-    font-size: 18px;
+    padding: 2rem;
+    font-size: 24px;
+}
+
+div.available-box {
+    border-radius: 0.5rem;
+    border: 8px black;
+    background: #52a248;
+    color: white;
+}
+
+div.available-text {
+    padding: 2rem;
+    font-size: 24px;
 }
