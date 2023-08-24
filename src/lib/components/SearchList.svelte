@@ -1,25 +1,25 @@
 <script lang="ts">
-    import SearchForm from "$lib/components/SearchForm.svelte";
-    import fetcher from "$lib/fetcher.js";
-    import {domain} from "$lib/stores.js";
-    import "./searchlist.css";
-    import Loading from "$lib/components/Loading.svelte";
+    import SearchForm from '$lib/components/SearchForm.svelte';
+    import fetcher from '$lib/fetcher.js';
+    import { domain } from '$lib/stores.js';
+    import './searchlist.css';
+    import Loading from '$lib/components/Loading.svelte';
 
-    let results = []
-    let searched_domain: string | undefined = undefined
+    let results = [];
+    let searched_domain: string | undefined = undefined;
     let loading = false;
-    let available: boolean | undefined = undefined
+    let available: boolean | undefined = undefined;
 
     async function findAvailability() {
         available = undefined;
-        if($domain === ""){
-            return
+        if ($domain === '') {
+            return;
         }
         loading = true;
-        const res = await fetcher(`api/isAvailable?domain=${$domain}`).then(r => r)
-        searched_domain = $domain
+        const res = await fetcher(`api/isAvailable?domain=${$domain}`).then((r) => r);
+        searched_domain = $domain;
         // console.log(res, res.isAvailable)
-        if(!res.available){
+        if (!res.available) {
             available = false;
             loading = false;
         } else {
@@ -28,35 +28,26 @@
     }
 
     async function getPrices() {
-
-
-
-
-
-
         loading = false;
     }
-
 </script>
 
-<SearchForm handleClick={findAvailability}/>
+<SearchForm handleClick={findAvailability} />
 
-<div style="margin-bottom: 1em"></div>
+<div style="margin-bottom: 1em" />
 
 {#if !available && available !== undefined}
-<div class="unavailable-box">
-    <div class="unavailable-text">
-        Oops! {searched_domain} isn't available! Try another domain.
+    <div class="unavailable-box">
+        <div class="unavailable-text">
+            Oops! {searched_domain} isn't available! Try another domain.
+        </div>
     </div>
-</div>
-{:else}
-    {#if available}
+{:else if available}
     <div class="available-box">
         <div class="available-text">
             {searched_domain} is available!
         </div>
     </div>
-    {/if}
 {/if}
 
 {#if results !== []}
@@ -73,6 +64,6 @@
 
 {#if loading}
     <div style="text-align: center">
-    <Loading/>
+        <Loading />
     </div>
 {/if}

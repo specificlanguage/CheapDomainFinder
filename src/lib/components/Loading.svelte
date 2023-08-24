@@ -1,5 +1,9 @@
-
-<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+<div class="lds-ring">
+    <div />
+    <div />
+    <div />
+    <div />
+</div>
 
 <style>
     .lds-ring {
@@ -37,5 +41,4 @@
             transform: rotate(360deg);
         }
     }
-
 </style>

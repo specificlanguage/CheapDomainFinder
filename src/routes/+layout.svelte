@@ -1,5 +1,5 @@
 <script>
-	import '../sakura.css';
+    import '../sakura.css';
 </script>
 
 <slot />
