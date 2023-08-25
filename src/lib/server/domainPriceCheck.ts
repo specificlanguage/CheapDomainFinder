@@ -54,8 +54,9 @@ export async function queryNameSilo(domain_name: string): Promise<PriceResponse 
         return null;
     }
     const available = output.available;
+
     return {
-        price: available['@_price'],
+        price: parseFloat(available.domain['@_price']),
         url: `https://www.namesilo.com/domain/search-domains?query=${domain_name}`
     }
 }
