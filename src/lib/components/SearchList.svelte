@@ -30,7 +30,7 @@
 
     async function getPrices() {
         loading = false;
-        const res = await fetch(`api/prices?domain=${$domain}`).then(r => r)
+        const res = await fetch(`api/prices?domain=${$domain}`).then(r => r.json())
         console.log(res);
     }
 </script>

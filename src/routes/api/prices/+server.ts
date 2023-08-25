@@ -11,18 +11,16 @@ export async function GET({ request }: RequestEvent) {
         return json({ error: 'missing domain name' }, { status: 400 });
     }
 
-    const prices: PriceResponse[] = [];
+    const prices: Array<PriceResponse> = [];
 
     const domain = params.get('domain') ?? '';
 
-    const queries = [queryGoDaddy, queryNameSilo]
-
-    queries.map(async f => {
-        const resp = await f(domain);
-        if (resp != null) {
-            prices.push(resp);
+    const queries = [queryGoDaddy(domain), queryNameSilo(domain)]
+    await Promise.allSettled(queries).then((results) => results.forEach((result) => {
+        if(result.status == "fulfilled" && result.value != null) {
+            prices.push(result.value);
         }
-    })
+    }))
 
     return json({prices: prices}, {status: 200})
 }
