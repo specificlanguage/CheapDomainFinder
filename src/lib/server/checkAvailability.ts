@@ -2,18 +2,20 @@ import { DOMAIN_CHECKER_API_KEY } from '$env/static/private';
 
 const options = {
     method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': DOMAIN_CHECKER_API_KEY,
-        'X-RapidAPI-Host': 'domain-checker7.p.rapidapi.com'
-    }
 };
 
-export async function checkAvailability(domain: string) {
-    const url = `https://domain-checker7.p.rapidapi.com/whois?domain=${domain}`;
+export async function checkAvailability(domain: string): Promise<boolean> {
+    const url = `https://www.rdap.net/domain/${domain}`;
     try {
         const response = await fetch(url, options);
-        return await response.json();
+        console.log(response);
+        if(response.status == 404){
+            return true;
+        } else {
+            return false;
+        }
     } catch (error) {
-        return error;
+        console.log(error);
+        return false;
     }
 }
