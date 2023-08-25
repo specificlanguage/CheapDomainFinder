@@ -4,11 +4,16 @@
     import { domain } from '$lib/stores.js';
     import './searchlist.css';
     import Loading from '$lib/components/Loading.svelte';
+    import Icon from '@iconify/svelte'
+    import type { PriceResponse } from '$lib/types.js';
 
-    let results = [];
+    // let results = [{"registrar":"GoDaddy","price":59.99,"url":"https://www.godaddy.com/domainsearch/find?checkAvail=1&domainToCheck=speclang.io"},{"registrar":"NameSilo","price":39.99,"url":"https://www.namesilo.com/domain/search-domains?query=speclang.io"}]
+    let results: Array<PriceResponse> = []
     let searched_domain: string | undefined = undefined;
     let loading = false;
     let available: boolean | undefined = undefined;
+
+    results.sort((r1, r2) => r1.price - r2.price);
 
     async function findAvailability() {
         available = undefined;
@@ -24,20 +29,25 @@
             loading = false;
         } else {
             available = true;
-            getPrices();
+            await getPrices();
         }
     }
 
     async function getPrices() {
-        loading = false;
         const res = await fetch(`api/prices?domain=${$domain}`).then(r => r.json())
-        console.log(res);
+        res.prices.sort((r1, r2) => r1.price - r2.price);
+        results = res.prices;
+        loading = false;
     }
+
+    console.log(results)
+
 </script>
 
-<SearchForm handleClick={findAvailability} />
+<div style="margin-bottom: 1em">
+    <SearchForm handleClick={findAvailability} />
+</div>
 
-<div style="margin-bottom: 1em" />
 
 {#if !available && available !== undefined}
     <div class="unavailable-box">
@@ -53,15 +63,32 @@
     </div>
 {/if}
 
-{#if results !== []}
-    <ul>
-        <!--{#each Object.keys(results) as site}-->
-        <!--    <li>-->
-        <!--        <div>-->
-        <!--            <a href="https://google.com">{site}: ${results[site]}</a>-->
-        <!--        </div>-->
-        <!--    </li>-->
-        <!--{/each}-->
+{#if results.length > 0}
+    <div class='notice-box'>
+        <div class='notice-text'>
+            Please note that prices may vary on the registrar's page.
+        </div>
+    </div>
+    <ul class='results-box'>
+        {#each results as res, i}
+            <hr style='position: inherit'/>
+            <li class='single-result'>
+                <div class='align-left'>
+                    <img class='result-image' src={'/' + res.registrar + ".png"} alt={res.registrar}>
+                </div>
+                <div class='result-button align-right'>
+                    <a href={res.url} target="_blank" rel="noopener noreferrer">
+                        <button class='result-button result-click'>
+                            ${res.price}
+                            <Icon icon="material-symbols:north-east" style='font-size: 18px;' />
+                        </button>
+                    </a>
+                </div>
+            </li>
+            {#if i === results.length - 1}
+                <hr style='position: inherit'/>
+            {/if}
+        {/each}
     </ul>
 {/if}
 
@@ -69,4 +96,7 @@
     <div style="text-align: center">
         <Loading />
     </div>
+    {#if available}
+        <p style='text-align: center'>Getting prices...</p>
+    {/if}
 {/if}

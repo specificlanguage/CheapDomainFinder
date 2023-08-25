@@ -12,5 +12,7 @@
     .container {
         align-content: center;
         margin-bottom: 2em;
+        height: fit-content;
     }
+
 </style>

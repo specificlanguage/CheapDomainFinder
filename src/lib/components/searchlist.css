@@ -3,6 +3,7 @@ div.unavailable-box {
     border: 8px black;
     background: #d26161;
     color: white;
+    margin-bottom: 2em;
 }
 
 div.unavailable-text {
@@ -15,9 +16,74 @@ div.available-box {
     border: 8px black;
     background: #52a248;
     color: white;
+    margin-bottom: 2em;
 }
 
 div.available-text {
     padding: 2rem;
     font-size: 24px;
+}
+
+div.notice-box {
+    border-radius: 0.5rem;
+    border: 8px black;
+    background: #e0c249;
+    color: black;
+    margin-top: -1.5em;
+    margin-bottom: 2em;
+}
+
+div.notice-text {
+    padding: 2rem;
+    font-size: 18px;
+}
+
+/*----- Results boxes ----*/
+
+.results-box {
+    border: 8px black;
+    border-radius: 0.5rem;
+    background: #ddd;
+    padding: 2rem;
+    list-style-type: none;
+}
+
+img.result-image {
+    width: 1500px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.single-result {
+    border: 8px black;
+    padding: 1rem;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.result-button {
+    text-align: right;
+    font-size: 18px;
+    padding: 1em;
+    border-radius: 0.75rem;
+}
+
+.result-click {
+    background: cadetblue;
+    border: 2px black;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.align-left {
+    float: left;
+    width: 50%;
+}
+
+.align-right {
+    float: right;
+    width: 50%;
 }
