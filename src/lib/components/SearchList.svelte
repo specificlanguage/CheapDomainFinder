@@ -24,11 +24,14 @@
             loading = false;
         } else {
             available = true;
+            getPrices();
         }
     }
 
     async function getPrices() {
         loading = false;
+        const res = await fetch(`api/prices?domain=${$domain}`).then(r => r)
+        console.log(res);
     }
 </script>
 

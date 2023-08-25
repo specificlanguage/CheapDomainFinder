@@ -51,6 +51,7 @@
     "types": "./dist/index.d.ts",
     "type": "module",
     "dependencies": {
+        "fast-xml-parser": "^4.2.7",
         "sakura.css": "^1.4.1"
     }
 }

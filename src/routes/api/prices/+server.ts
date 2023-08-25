@@ -2,7 +2,7 @@ import type { RequestEvent } from '@sveltejs/kit';
 import type { PriceResponse } from '$lib/server/domainPriceCheck.js';
 
 import { json } from '@sveltejs/kit';
-import { queryGoDaddy } from '$lib/server/domainPriceCheck.js';
+import { queryGoDaddy, queryNameSilo } from '$lib/server/domainPriceCheck.js';
 
 export async function GET({ request }: RequestEvent) {
     const params = new URLSearchParams(request.url.split('?')[1]);
@@ -15,5 +15,14 @@ export async function GET({ request }: RequestEvent) {
 
     const domain = params.get('domain') ?? '';
 
-    prices.push(await queryGoDaddy(domain));
+    const queries = [queryGoDaddy, queryNameSilo]
+
+    queries.map(async f => {
+        const resp = await f(domain);
+        if (resp != null) {
+            prices.push(resp);
+        }
+    })
+
+    return json({prices: prices}, {status: 200})
 }
