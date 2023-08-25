@@ -1,5 +1,5 @@
 import type { RequestEvent } from '@sveltejs/kit';
-import type { PriceResponse } from '$lib/server/domainPriceCheck.js';
+import type { PriceResponse } from '$lib/types.js';
 
 import { json } from '@sveltejs/kit';
 import { queryGoDaddy, queryNameSilo } from '$lib/server/domainPriceCheck.js';
