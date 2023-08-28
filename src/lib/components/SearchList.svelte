@@ -40,8 +40,6 @@
         loading = false;
     }
 
-    console.log(results)
-
 </script>
 
 <div style="margin-bottom: 1em">
