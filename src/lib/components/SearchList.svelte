@@ -4,7 +4,7 @@
     import { domain } from '$lib/stores.js';
     import './searchlist.css';
     import Loading from '$lib/components/Loading.svelte';
-    import Icon from '@iconify/svelte'
+    import ResultsBox from "$lib/components/ResultsBox.svelte";
     import type { PriceResponse } from '$lib/types.js';
 
     // let results = [{"registrar":"GoDaddy","price":59.99,"url":"https://www.godaddy.com/domainsearch/find?checkAvail=1&domainToCheck=speclang.io"},{"registrar":"NameSilo","price":39.99,"url":"https://www.namesilo.com/domain/search-domains?query=speclang.io"}]
@@ -16,6 +16,7 @@
     results.sort((r1, r2) => r1.price - r2.price);
 
     async function findAvailability() {
+        results = [];
         available = undefined;
         if ($domain === '') {
             return;
@@ -65,37 +66,11 @@
     <div class='notice-box'>
         <div class='notice-text'>
             Please note that prices may vary on the registrar's page.
+            <br/>
+            Prices are listed per year.
         </div>
     </div>
-    <ul class='results-box'>
-        {#each results as res, i}
-            <hr style='position: inherit'/>
-            <li class='single-result'>
-                <div class='align-left'>
-                    <img class='result-image' src={'/' + res.registrar + ".png"} alt={res.registrar}>
-                </div>
-                <div class='result-button align-right'>
-                    {#if res.renewPrice !== undefined}
-                        <div style="margin-bottom: 3rem"></div>
-                    {/if}
-                    <a href={res.url} target="_blank" rel="noopener noreferrer">
-                        <button class='result-button result-click'>
-                            ${res.price}
-                            <Icon icon="material-symbols:north-east" style='font-size: 18px;' />
-                        </button>
-                    </a>
-                    {#if res.renewPrice !== undefined}
-                        <p style="display: block; font-size: 14px">
-                            Renews at ${res.renewPrice}
-                        </p>
-                    {/if}
-                </div>
-            </li>
-            {#if i === results.length - 1}
-                <hr style='position: inherit'/>
-            {/if}
-        {/each}
-    </ul>
+    <ResultsBox results={results}/>
 {/if}
 
 {#if loading}
