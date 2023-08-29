@@ -98,8 +98,6 @@ export async function queryHover(domain_name: string): Promise<PriceResponse | n
         return null;
     }
 
-    console.log(row)
-
     return {
         registrar: "Hover",
         price: row.register,
