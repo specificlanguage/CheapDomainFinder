@@ -2,13 +2,13 @@
 # Pricing data for Namecheap and Hover were sourced from their webpages, both are publicly available when querying
 # their API.
 
-
-import os
+import csv
 import json
 import logging
+import os
+
 import psycopg2
 import roman
-from supabase import create_client, Client
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -16,11 +16,6 @@ load_dotenv()
 database_url = os.environ.get("DATABASE_URL")
 conn = psycopg2.connect(database_url)
 
-
-# sb_url: str = os.environ.get("SUPABASE_URL")
-# sb_key: str = os.environ.get("SUPABASE_KEY")
-# print(sb_url, sb_key)
-# supabase: Client = create_client(sb_url, sb_key)
 
 def load_file(filename):
     with open(filename) as file:
@@ -49,6 +44,7 @@ def process_hover():
             entry["registrar"], entry["tld"], entry["register"], entry["renew"]
         )
         cur.execute(cmd)
+    conn.commit()
 
 
 # Source of file: https://www.namecheap.com/domains/tlds.ashx
@@ -63,7 +59,10 @@ def process_namecheap():
             entry["registrar"], entry["tld"], entry["register"], entry["renew"]
         )
         cur.execute(cmd)
+    conn.commit()
 
+
+# Source of file: https://www.squarespace.com/api/domain-tld-categories/all/tlds
 def process_squarespace():
     objfile = load_file("./data/squarespace.json")
     for result in objfile["results"]:
@@ -84,19 +83,31 @@ def process_squarespace():
         logging.info(f'Inserting {tld} from registrar "squarespace"')
         cmd = f"""INSERT INTO tlds (registrar, tld, register, renew) VALUES ('squarespace', '{tld}', {price}, {price})"""
         cur.execute(cmd)
+    conn.commit()
 
 
-
+# Source of file(s):
+# https://github.com/rizdaprasetya/Raw-Domain-Extension-Price/blob/master/scrap-cloudflare-domain-pricing/scripts/dump-cloudflare-domain-pricing.js
+# https://dash.cloudflare.com/fdebcce221152e8ce7787de3c1b2583d/domains/tlds -- above repository was missing some TLDs.
+def process_cloudflare():
+    with open("./data/cloudflare.csv") as cloudflare_csv:
+        reader = csv.DictReader(cloudflare_csv)
+        for row in reader:
+            tld = row["tld_name"]
+            renew = row["renewal_price_usd"]
+            register = row["registration_price_usd"]
+            logging.info(f'Inserting {tld} from registrar "cloudflare"')
+            cmd = f"""INSERT INTO tlds (registrar, tld, register, renew) VALUES ('cloudflare', '{tld}', {register}, {renew})"""
+            cur.execute(cmd)
+        conn.commit()
 
 def main():
-    # Uncomment the above lines if loading for the first time. Please make sure you're doing this correctly.
+    # Uncomment the below lines if loading for the first time. Please make sure you're doing this correctly.
 
     # process_hover()
-    # conn.commit()
     # process_namecheap()
-    # conn.commit()
-    process_squarespace()
-    conn.commit()
+    # process_squarespace()
+    # process_cloudflare()
     pass
 
 

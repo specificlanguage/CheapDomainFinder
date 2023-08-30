@@ -33,22 +33,24 @@ export async function queryGoDaddy(domain_name: string): Promise<PriceResponse |
 
 export async function queryNameSilo(domain_name: string): Promise<PriceResponse | null> {
     // Somehow, it's easier not to use the sandbox for this one.
-    const URL = `https://www.namesilo.com/apibatch/checkRegisterAvailability?version=1&type=xml&key=${NAMESILO_API_KEY}&domains=` + domain_name
+    const URL =
+      `https://www.namesilo.com/apibatch/checkRegisterAvailability?version=1&type=xml&key=${NAMESILO_API_KEY}&domains=` +
+      domain_name;
     const parser = new XMLParser({
         ignoreAttributes: false,
-        attributeNamePrefix : "@_",
-    })
+        attributeNamePrefix: '@_'
+    });
 
     // This makes it a little easier to get around a possible 210.
-    const filterHeaders = new Headers()
+    const filterHeaders = new Headers();
     filterHeaders.append("User-Agent", "CheapDomainFinder Website");
 
-    const resp = await fetch(URL, {headers: filterHeaders}).then(r => r.text());
-    if(resp.includes("Invalid Request")){
+    const resp = await fetch(URL, { headers: filterHeaders }).then((r) => r.text());
+    if (resp.includes("Invalid Request")) {
         return null;
     }
     const output = parser.parse(resp).namesilo.reply;
-    if(output.code != 300 || output.detail != "success" || !output.available){
+    if (output.code != 300 || output.detail != "success" || !output.available) {
         console.log(output);
         return null;
     }
@@ -58,73 +60,86 @@ export async function queryNameSilo(domain_name: string): Promise<PriceResponse 
         registrar: "NameSilo",
         price: parseFloat(available.domain['@_price']),
         url: `https://www.namesilo.com/domain/search-domains?query=${domain_name}`
-    }
+    };
 }
 
 export async function queryNamecheap(domain_name: string): Promise<PriceResponse | null> {
-
-    const parseResult = parseDomain(domain_name)
-    if (parseResult.type !== ParseResultType.Listed) {
-        return null;
-    }
-
-    const {topLevelDomains} = parseResult;
-    const tld = topLevelDomains.join(".")
-    const row = await queryForTLD("namecheap", tld).then(row => row).catch(e => null)
-    if (row == null){
-        return null;
-    }
-
-    return {
-        registrar: "Namecheap",
-        price: row.register,
-        renewPrice: row.renew,
-        url: `https://www.namecheap.com/domains/registration/results/?domain=${domain_name}`
-    }
-
+    return queryRegistrarInDB(
+      domain_name,
+      "namecheap",
+      "Namecheap",
+      `https://www.namecheap.com/domains/registration/results/?domain=`,
+      true
+    );
 }
 
 export async function queryHover(domain_name: string): Promise<PriceResponse | null> {
-
-    const parseResult = parseDomain(domain_name)
-    if (parseResult.type !== ParseResultType.Listed) {
-        return null;
-    }
-
-    const {topLevelDomains} = parseResult;
-    const tld = topLevelDomains.join(".")
-    const row = await queryForTLD("hover", tld).then(row => row).catch(e => null)
-    if (row == null){
-        return null;
-    }
-
-    return {
-        registrar: "Hover",
-        price: row.register,
-        renewPrice: row.renew,
-        url: `https://www.hover.com/domains/results?q=${domain_name}`
-    }
-
+    return queryRegistrarInDB(
+        domain_name,
+        'hover',
+        'Hover',
+        `https://www.hover.com/domains/results?q=`,
+        true
+    );
 }
 
 export async function querySquarespace(domain_name: string): Promise<PriceResponse | null> {
+    return queryRegistrarInDB(
+        domain_name,
+        'squarespace',
+        'Squarespace',
+        `https://domains.squarespace.com/`,
+        false
+    );
+}
 
-    const parseResult = parseDomain(domain_name)
+export async function queryCloudflare(domain_name: string): Promise<PriceResponse | null> {
+    const resp = await queryRegistrarInDB(
+        domain_name,
+        'cloudflare',
+        'Cloudflare',
+        `https://dash.cloudflare.com/`,
+        false
+    );
+    if (resp != null) {
+        resp.price = resp.price + 0.18;
+    }
+    return resp;
+}
+
+export async function queryRegistrarInDB(
+  domain_name: string,
+  registrarInDB: string,
+  return_registrar: string,
+  base_end_url: string,
+  addDomainAtEnd: boolean
+): Promise<PriceResponse | null> {
+    const parseResult = parseDomain(domain_name);
     if (parseResult.type !== ParseResultType.Listed) {
         return null;
     }
 
-    const {topLevelDomains} = parseResult;
-    const tld = topLevelDomains.join("")
-    const row = await queryForTLD("squarespace", tld).then(row => row).catch(e => null)
+    const { topLevelDomains } = parseResult;
+    const tld = topLevelDomains.join("");
+    const row = await queryForTLD(registrarInDB, tld)
+      .then((row) => row)
+      .catch((e) => {
+          console.log(e);
+          return null;
+      });
+
     if (row == null) {
         return null;
     }
 
-    return {
-        registrar: "Squarespace",
-        price: row.register,
-        url: `https://domains.squarespace.com/`
-    }
+    const url = base_end_url + (addDomainAtEnd ? domain_name : '');
 
+    return {
+        registrar: return_registrar,
+        price: row.register,
+        ...(row.renew != row.register && {
+            renewPrice: row.renew
+        }),
+        url
+    };
 }

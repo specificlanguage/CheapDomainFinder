@@ -1,14 +1,14 @@
 import type { RequestEvent } from '@sveltejs/kit';
-import type { PriceResponse } from '$lib/types.js';
-
 import { json } from '@sveltejs/kit';
+import type { PriceResponse } from '$lib/types.js';
 import {
+    queryCloudflare,
     queryGoDaddy,
     queryHover,
     queryNamecheap,
     queryNameSilo,
     querySquarespace
-} from "$lib/server/domainPriceCheck.js";
+} from '$lib/server/domainPriceCheck.js';
 
 export async function GET({ request }: RequestEvent) {
     const params = new URLSearchParams(request.url.split('?')[1]);
@@ -26,16 +26,17 @@ export async function GET({ request }: RequestEvent) {
         queryNameSilo(domain),
         queryNamecheap(domain),
         queryHover(domain),
-        querySquarespace(domain)
+        querySquarespace(domain),
+        queryCloudflare(domain)
+    ];
 
+    await Promise.allSettled(queries).then((results) =>
+        results.forEach((result) => {
+            if (result.status == 'fulfilled' && result.value != null) {
+                prices.push(result.value);
+            }
+        })
+    );
 
-    ]
-
-    await Promise.allSettled(queries).then((results) => results.forEach((result) => {
-        if(result.status == "fulfilled" && result.value != null) {
-            prices.push(result.value);
-        }
-    }))
-
-    return json({prices: prices}, {status: 200})
+    return json({ prices: prices }, { status: 200 });
 }
