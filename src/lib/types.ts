@@ -1,6 +1,7 @@
 export interface PriceResponse {
-	registrar: string;
-	price: number;
-	renewPrice?: number;
-	url: string;
+    registrar: string;
+    price: number;
+    renewPrice?: number;
+    url: string;
+    premium?: boolean;
 }

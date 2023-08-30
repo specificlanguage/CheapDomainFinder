@@ -59,10 +59,5 @@
         "fast-xml-parser": "^4.2.7",
         "parse-domain": "^7.0.1",
         "sakura.css": "^1.4.1"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "pretty-quick --staged"
-        }
     }
 }

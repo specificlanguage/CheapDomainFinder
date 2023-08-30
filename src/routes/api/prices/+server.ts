@@ -6,6 +6,7 @@ import {
     queryGoDaddy,
     queryHover,
     queryNamecheap,
+    queryNameDotCom,
     queryNameSilo,
     querySquarespace
 } from '$lib/server/domainPriceCheck.js';
@@ -27,13 +28,16 @@ export async function GET({ request }: RequestEvent) {
         queryNamecheap(domain),
         queryHover(domain),
         querySquarespace(domain),
-        queryCloudflare(domain)
+        queryCloudflare(domain),
+        queryNameDotCom(domain)
     ];
 
     await Promise.allSettled(queries).then((results) =>
         results.forEach((result) => {
             if (result.status == 'fulfilled' && result.value != null) {
-                prices.push(result.value);
+                if (result.value.price) {
+                    prices.push(result.value);
+                }
             }
         })
     );
