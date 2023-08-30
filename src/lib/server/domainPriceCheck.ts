@@ -106,3 +106,25 @@ export async function queryHover(domain_name: string): Promise<PriceResponse | n
     }
 
 }
+
+export async function querySquarespace(domain_name: string): Promise<PriceResponse | null> {
+
+    const parseResult = parseDomain(domain_name)
+    if (parseResult.type !== ParseResultType.Listed) {
+        return null;
+    }
+
+    const {topLevelDomains} = parseResult;
+    const tld = topLevelDomains.join("")
+    const row = await queryForTLD("squarespace", tld).then(row => row).catch(e => null)
+    if (row == null) {
+        return null;
+    }
+
+    return {
+        registrar: "Squarespace",
+        price: row.register,
+        url: `https://domains.squarespace.com/`
+    }
+
+}

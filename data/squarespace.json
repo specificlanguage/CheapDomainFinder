@@ -1,0 +1,1464 @@
+{
+  "results": [
+    {
+      "tld": "academy",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "accountant",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "accountants",
+      "level": "premium_vi"
+    },
+    {
+      "tld": "actor",
+      "level": "premium_iv"
+    },
+    {
+      "tld": "agency",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "airforce",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "amsterdam",
+      "level": "premium_v"
+    },
+    {
+      "tld": "apartments",
+      "level": "premium_v"
+    },
+    {
+      "tld": "app",
+      "level": "premium_i"
+    },
+    {
+      "tld": "archi",
+      "level": "premium_v"
+    },
+    {
+      "tld": "army",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "art",
+      "level": "premium_i"
+    },
+    {
+      "tld": "associates",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "attorney",
+      "level": "premium_v"
+    },
+    {
+      "tld": "au",
+      "level": "basic"
+    },
+    {
+      "tld": "auction",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "band",
+      "level": "basic"
+    },
+    {
+      "tld": "bar",
+      "level": "premium_v"
+    },
+    {
+      "tld": "bargains",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "beer",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "best",
+      "level": "premium_i"
+    },
+    {
+      "tld": "bid",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "bike",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "bingo",
+      "level": "premium_v"
+    },
+    {
+      "tld": "bio",
+      "level": "premium_v"
+    },
+    {
+      "tld": "biz",
+      "level": "basic"
+    },
+    {
+      "tld": "black",
+      "level": "premium_iv"
+    },
+    {
+      "tld": "blog",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "blue",
+      "level": "premium_i"
+    },
+    {
+      "tld": "boo",
+      "level": "basic"
+    },
+    {
+      "tld": "boutique",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "builders",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "business",
+      "level": "premium_i"
+    },
+    {
+      "tld": "buzz",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "ca",
+      "level": "premium_i"
+    },
+    {
+      "tld": "cab",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "cafe",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "camera",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "camp",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "capetown",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "capital",
+      "level": "premium_v"
+    },
+    {
+      "tld": "cards",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "care",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "careers",
+      "level": "premium_v"
+    },
+    {
+      "tld": "casa",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "cash",
+      "level": "premium_iv"
+    },
+    {
+      "tld": "casino",
+      "level": "premium_vii"
+    },
+    {
+      "tld": "catering",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "center",
+      "level": "premium_i"
+    },
+    {
+      "tld": "ceo",
+      "level": "premium_vi"
+    },
+    {
+      "tld": "chat",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "charity",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "cheap",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "church",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "city",
+      "level": "premium_i"
+    },
+    {
+      "tld": "claims",
+      "level": "premium_v"
+    },
+    {
+      "tld": "cleaning",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "clinic",
+      "level": "premium_v"
+    },
+    {
+      "tld": "clothing",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "cloud",
+      "level": "basic"
+    },
+    {
+      "tld": "club",
+      "level": "basic"
+    },
+    {
+      "tld": "co",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "co.uk",
+      "level": "basic"
+    },
+    {
+      "tld": "coach",
+      "level": "premium_v"
+    },
+    {
+      "tld": "codes",
+      "level": "premium_v"
+    },
+    {
+      "tld": "coffee",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "com",
+      "level": "basic"
+    },
+    {
+      "tld": "community",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "company",
+      "level": "premium_i"
+    },
+    {
+      "tld": "computer",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "com.au",
+      "level": "basic"
+    },
+    {
+      "tld": "condos",
+      "level": "premium_v"
+    },
+    {
+      "tld": "construction",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "consulting",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "contact",
+      "level": "basic"
+    },
+    {
+      "tld": "contractors",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "cooking",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "cool",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "country",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "coupons",
+      "level": "premium_v"
+    },
+    {
+      "tld": "courses",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "credit",
+      "level": "premium_vi"
+    },
+    {
+      "tld": "creditcard",
+      "level": "premium_vii"
+    },
+    {
+      "tld": "cricket",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "cruises",
+      "level": "premium_v"
+    },
+    {
+      "tld": "dance",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "date",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "dating",
+      "level": "premium_v"
+    },
+    {
+      "tld": "day",
+      "level": "basic"
+    },
+    {
+      "tld": "de",
+      "level": "basic"
+    },
+    {
+      "tld": "deals",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "degree",
+      "level": "premium_v"
+    },
+    {
+      "tld": "delivery",
+      "level": "premium_v"
+    },
+    {
+      "tld": "democrat",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "dental",
+      "level": "premium_v"
+    },
+    {
+      "tld": "dentist",
+      "level": "premium_v"
+    },
+    {
+      "tld": "desi",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "design",
+      "level": "premium_v"
+    },
+    {
+      "tld": "dev",
+      "level": "premium_i"
+    },
+    {
+      "tld": "diamonds",
+      "level": "premium_v"
+    },
+    {
+      "tld": "digital",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "direct",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "directory",
+      "level": "premium_i"
+    },
+    {
+      "tld": "discount",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "doctor",
+      "level": "premium_vi"
+    },
+    {
+      "tld": "dog",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "domains",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "download",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "durban",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "earth",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "eco",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "education",
+      "level": "premium_i"
+    },
+    {
+      "tld": "email",
+      "level": "premium_i"
+    },
+    {
+      "tld": "energy",
+      "level": "premium_vi"
+    },
+    {
+      "tld": "engineer",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "engineering",
+      "level": "premium_v"
+    },
+    {
+      "tld": "enterprises",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "equipment",
+      "level": "premium_i"
+    },
+    {
+      "tld": "estate",
+      "level": "premium_iv"
+    },
+    {
+      "tld": "eu",
+      "level": "basic"
+    },
+    {
+      "tld": "events",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "exchange",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "expert",
+      "level": "premium_v"
+    },
+    {
+      "tld": "exposed",
+      "level": "premium_i"
+    },
+    {
+      "tld": "express",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "fail",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "faith",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "family",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "fan",
+      "level": "premium_v"
+    },
+    {
+      "tld": "fans",
+      "level": "basic"
+    },
+    {
+      "tld": "farm",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "fashion",
+      "level": "premium_i"
+    },
+    {
+      "tld": "finance",
+      "level": "premium_v"
+    },
+    {
+      "tld": "financial",
+      "level": "premium_v"
+    },
+    {
+      "tld": "fish",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "fishing",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "fit",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "fitness",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "flights",
+      "level": "premium_v"
+    },
+    {
+      "tld": "florist",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "football",
+      "level": "premium_i"
+    },
+    {
+      "tld": "forsale",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "foundation",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "fun",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "fund",
+      "level": "premium_v"
+    },
+    {
+      "tld": "furniture",
+      "level": "premium_v"
+    },
+    {
+      "tld": "futbol",
+      "level": "premium_i"
+    },
+    {
+      "tld": "fyi",
+      "level": "premium_i"
+    },
+    {
+      "tld": "gallery",
+      "level": "premium_i"
+    },
+    {
+      "tld": "games",
+      "level": "premium_i"
+    },
+    {
+      "tld": "gay",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "gifts",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "gives",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "glass",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "gmbh",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "gold",
+      "level": "premium_vi"
+    },
+    {
+      "tld": "golf",
+      "level": "premium_v"
+    },
+    {
+      "tld": "graphics",
+      "level": "premium_i"
+    },
+    {
+      "tld": "gratis",
+      "level": "premium_i"
+    },
+    {
+      "tld": "green",
+      "level": "premium_vi"
+    },
+    {
+      "tld": "gripe",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "group",
+      "level": "premium_i"
+    },
+    {
+      "tld": "guide",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "guru",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "haus",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "health",
+      "level": "premium_v"
+    },
+    {
+      "tld": "healthcare",
+      "level": "premium_v"
+    },
+    {
+      "tld": "hockey",
+      "level": "premium_v"
+    },
+    {
+      "tld": "holdings",
+      "level": "premium_v"
+    },
+    {
+      "tld": "holiday",
+      "level": "premium_v"
+    },
+    {
+      "tld": "homes",
+      "level": "premium_i"
+    },
+    {
+      "tld": "horse",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "hospital",
+      "level": "premium_v"
+    },
+    {
+      "tld": "host",
+      "level": "premium_v"
+    },
+    {
+      "tld": "house",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "how",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "immo",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "immobilien",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "in",
+      "level": "basic"
+    },
+    {
+      "tld": "industries",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "info",
+      "level": "basic"
+    },
+    {
+      "tld": "ink",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "institute",
+      "level": "premium_i"
+    },
+    {
+      "tld": "insure",
+      "level": "premium_v"
+    },
+    {
+      "tld": "international",
+      "level": "premium_i"
+    },
+    {
+      "tld": "investments",
+      "level": "premium_vi"
+    },
+    {
+      "tld": "io",
+      "level": "premium_v"
+    },
+    {
+      "tld": "irish",
+      "level": "premium_iv"
+    },
+    {
+      "tld": "jetzt",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "jewelry",
+      "level": "premium_v"
+    },
+    {
+      "tld": "joburg",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "kaufen",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "kim",
+      "level": "premium_i"
+    },
+    {
+      "tld": "kitchen",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "kiwi",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "land",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "lawyer",
+      "level": "premium_iv"
+    },
+    {
+      "tld": "lease",
+      "level": "premium_v"
+    },
+    {
+      "tld": "legal",
+      "level": "premium_v"
+    },
+    {
+      "tld": "lgbt",
+      "level": "premium_iv"
+    },
+    {
+      "tld": "life",
+      "level": "basic"
+    },
+    {
+      "tld": "lighting",
+      "level": "premium_i"
+    },
+    {
+      "tld": "limited",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "limo",
+      "level": "premium_v"
+    },
+    {
+      "tld": "live",
+      "level": "basic"
+    },
+    {
+      "tld": "llc",
+      "level": "premium_iv"
+    },
+    {
+      "tld": "loan",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "loans",
+      "level": "premium_vi"
+    },
+    {
+      "tld": "london",
+      "level": "premium_iv"
+    },
+    {
+      "tld": "love",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "ltd",
+      "level": "premium_i"
+    },
+    {
+      "tld": "luxury",
+      "level": "basic"
+    },
+    {
+      "tld": "maison",
+      "level": "premium_v"
+    },
+    {
+      "tld": "management",
+      "level": "premium_i"
+    },
+    {
+      "tld": "market",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "marketing",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "mba",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "me",
+      "level": "basic"
+    },
+    {
+      "tld": "media",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "memorial",
+      "level": "premium_v"
+    },
+    {
+      "tld": "men",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "menu",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "miami",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "mobi",
+      "level": "basic"
+    },
+    {
+      "tld": "moda",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "moe",
+      "level": "premium_i"
+    },
+    {
+      "tld": "money",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "mortgage",
+      "level": "premium_v"
+    },
+    {
+      "tld": "movie",
+      "level": "premium_viii"
+    },
+    {
+      "tld": "nagoya",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "navy",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "net",
+      "level": "basic"
+    },
+    {
+      "tld": "network",
+      "level": "premium_i"
+    },
+    {
+      "tld": "news",
+      "level": "basic"
+    },
+    {
+      "tld": "ninja",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "nl",
+      "level": "basic"
+    },
+    {
+      "tld": "one",
+      "level": "basic"
+    },
+    {
+      "tld": "online",
+      "level": "basic"
+    },
+    {
+      "tld": "org",
+      "level": "basic"
+    },
+    {
+      "tld": "org.uk",
+      "level": "basic"
+    },
+    {
+      "tld": "page",
+      "level": "basic"
+    },
+    {
+      "tld": "partners",
+      "level": "premium_v"
+    },
+    {
+      "tld": "parts",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "party",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "photography",
+      "level": "basic"
+    },
+    {
+      "tld": "photos",
+      "level": "premium_i"
+    },
+    {
+      "tld": "pictures",
+      "level": "premium_i"
+    },
+    {
+      "tld": "pink",
+      "level": "premium_i"
+    },
+    {
+      "tld": "pizza",
+      "level": "premium_v"
+    },
+    {
+      "tld": "place",
+      "level": "premium_i"
+    },
+    {
+      "tld": "plumbing",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "plus",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "poker",
+      "level": "premium_v"
+    },
+    {
+      "tld": "press",
+      "level": "premium_v"
+    },
+    {
+      "tld": "pro",
+      "level": "premium_i"
+    },
+    {
+      "tld": "productions",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "promo",
+      "level": "premium_i"
+    },
+    {
+      "tld": "properties",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "pub",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "racing",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "realty",
+      "level": "premium_ix"
+    },
+    {
+      "tld": "recipes",
+      "level": "premium_v"
+    },
+    {
+      "tld": "red",
+      "level": "premium_i"
+    },
+    {
+      "tld": "rehab",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "reise",
+      "level": "premium_vi"
+    },
+    {
+      "tld": "reisen",
+      "level": "premium_i"
+    },
+    {
+      "tld": "rent",
+      "level": "premium_v"
+    },
+    {
+      "tld": "rentals",
+      "level": "premium_iv"
+    },
+    {
+      "tld": "repair",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "report",
+      "level": "premium_i"
+    },
+    {
+      "tld": "republican",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "rest",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "restaurant",
+      "level": "premium_v"
+    },
+    {
+      "tld": "review",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "reviews",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "rip",
+      "level": "premium_i"
+    },
+    {
+      "tld": "rocks",
+      "level": "basic"
+    },
+    {
+      "tld": "rodeo",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "rsvp",
+      "level": "basic"
+    },
+    {
+      "tld": "run",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "sale",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "salon",
+      "level": "premium_v"
+    },
+    {
+      "tld": "sarl",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "school",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "schule",
+      "level": "premium_i"
+    },
+    {
+      "tld": "science",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "services",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "shoes",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "shop",
+      "level": "premium_iv"
+    },
+    {
+      "tld": "shopping",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "show",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "singles",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "site",
+      "level": "basic"
+    },
+    {
+      "tld": "ski",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "soccer",
+      "level": "premium_i"
+    },
+    {
+      "tld": "social",
+      "level": "basic"
+    },
+    {
+      "tld": "software",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "solar",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "solutions",
+      "level": "premium_i"
+    },
+    {
+      "tld": "soy",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "space",
+      "level": "basic"
+    },
+    {
+      "tld": "store",
+      "level": "basic"
+    },
+    {
+      "tld": "stream",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "studio",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "study",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "style",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "supplies",
+      "level": "premium_i"
+    },
+    {
+      "tld": "supply",
+      "level": "premium_i"
+    },
+    {
+      "tld": "support",
+      "level": "premium_i"
+    },
+    {
+      "tld": "surf",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "surgery",
+      "level": "premium_v"
+    },
+    {
+      "tld": "systems",
+      "level": "premium_i"
+    },
+    {
+      "tld": "tax",
+      "level": "premium_v"
+    },
+    {
+      "tld": "taxi",
+      "level": "premium_v"
+    },
+    {
+      "tld": "team",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "tech",
+      "level": "basic"
+    },
+    {
+      "tld": "technology",
+      "level": "premium_i"
+    },
+    {
+      "tld": "tennis",
+      "level": "premium_v"
+    },
+    {
+      "tld": "theater",
+      "level": "premium_v"
+    },
+    {
+      "tld": "tienda",
+      "level": "premium_v"
+    },
+    {
+      "tld": "tips",
+      "level": "premium_i"
+    },
+    {
+      "tld": "tires",
+      "level": "premium_vi"
+    },
+    {
+      "tld": "tirol",
+      "level": "premium_iv"
+    },
+    {
+      "tld": "today",
+      "level": "premium_i"
+    },
+    {
+      "tld": "tokyo",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "tools",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "top",
+      "level": "basic"
+    },
+    {
+      "tld": "tours",
+      "level": "premium_v"
+    },
+    {
+      "tld": "town",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "toys",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "trade",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "training",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "tube",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "uk",
+      "level": "basic"
+    },
+    {
+      "tld": "university",
+      "level": "premium_v"
+    },
+    {
+      "tld": "uno",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "us",
+      "level": "basic"
+    },
+    {
+      "tld": "vacations",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "vegas",
+      "level": "premium_v"
+    },
+    {
+      "tld": "ventures",
+      "level": "premium_v"
+    },
+    {
+      "tld": "vet",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "viajes",
+      "level": "premium_v"
+    },
+    {
+      "tld": "video",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "villas",
+      "level": "premium_v"
+    },
+    {
+      "tld": "vin",
+      "level": "premium_v"
+    },
+    {
+      "tld": "vip",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "vision",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "vodka",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "vote",
+      "level": "premium_v"
+    },
+    {
+      "tld": "voyage",
+      "level": "premium_v"
+    },
+    {
+      "tld": "watch",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "webcam",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "website",
+      "level": "basic"
+    },
+    {
+      "tld": "wedding",
+      "level": "premium_i"
+    },
+    {
+      "tld": "wiki",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "win",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "wine",
+      "level": "premium_v"
+    },
+    {
+      "tld": "work",
+      "level": "basic"
+    },
+    {
+      "tld": "works",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "world",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "wtf",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "xyz",
+      "level": "basic"
+    },
+    {
+      "tld": "yoga",
+      "level": "premium_iii"
+    },
+    {
+      "tld": "yokohama",
+      "level": "premium_ii"
+    },
+    {
+      "tld": "zone",
+      "level": "premium_iii"
+    }
+  ]
+}

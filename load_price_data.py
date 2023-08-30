@@ -7,6 +7,7 @@ import os
 import json
 import logging
 import psycopg2
+import roman
 from supabase import create_client, Client
 from dotenv import load_dotenv
 
@@ -63,6 +64,29 @@ def process_namecheap():
         )
         cur.execute(cmd)
 
+def process_squarespace():
+    objfile = load_file("./data/squarespace.json")
+    for result in objfile["results"]:
+        tld = result["tld"]
+        level = result["level"]
+        price = 20
+
+        # The squarespace model is pretty easy to understand, just parse the roman numeral at the end of the level
+        # (because it's usually premium) and it works! This could have been done by parsing the Roman Numerals by
+        # itself, but there's only 6 levels, so it's just easier to do manually than to copy a LeetCode solution.
+        markups = [20, 30, 40, 50, 60, 70, 100, 125, 250, 350, ]
+        if level != "basic":
+            l = level[8:]  # First eight characters of a premium string are always "premium_"
+            # print(l)
+            l = l.upper()
+            num = roman.fromRoman(l)
+            price = markups[num]
+        logging.info(f'Inserting {tld} from registrar "squarespace"')
+        cmd = f"""INSERT INTO tlds (registrar, tld, register, renew) VALUES ('squarespace', '{tld}', {price}, {price})"""
+        cur.execute(cmd)
+
+
+
 
 def main():
     # Uncomment the above lines if loading for the first time. Please make sure you're doing this correctly.
@@ -71,6 +95,8 @@ def main():
     # conn.commit()
     # process_namecheap()
     # conn.commit()
+    process_squarespace()
+    conn.commit()
     pass
 
 
