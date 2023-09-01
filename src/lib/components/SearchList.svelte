@@ -12,12 +12,15 @@
     let searched_domain: string | undefined = undefined;
     let loading = false;
     let available: boolean | undefined = undefined;
+    let isPremiumDomain: boolean | undefined = undefined;
 
     results.sort((r1, r2) => r1.price - r2.price);
 
     async function findAvailability() {
         results = [];
         available = undefined;
+        isPremiumDomain = undefined;
+
         if ($domain === '') {
             return;
         }
@@ -35,7 +38,9 @@
     }
 
     async function getPrices() {
-        const res = await fetch(`api/prices?domain=${$domain}`).then(r => r.json())
+        const {isPremium} = await fetch(`api/isPremium?domain=${domain}`).then(r => r.json())
+        isPremiumDomain = isPremium;
+        const res = await fetch(`api/prices?domain=${$domain}&premium=${isPremium}`).then(r => r.json())
         res.prices.sort((r1, r2) => r1.price - r2.price);
         results = res.prices;
         loading = false;
@@ -58,18 +63,20 @@
     <div class="available-box">
         <div class="available-text">
             {searched_domain} is available!
+            <br/>
+            Please note that prices may vary on the registrar's page. Prices are listed as rates per year.
         </div>
     </div>
+    {#if isPremiumDomain}
+        <div class='notice-box'>
+            <div class='notice-text'>
+                This is a <b>premium domain</b>; prices are marked up significantly, and not all registrar prices are listed here. Consider choosing a different domain title.
+            </div>
+        </div>
+    {/if}
 {/if}
 
 {#if results.length > 0}
-    <div class='notice-box'>
-        <div class='notice-text'>
-            Please note that prices may vary on the registrar's page.
-            <br/>
-            Prices are listed per year.
-        </div>
-    </div>
     <ResultsBox results={results}/>
 {/if}
 
@@ -79,5 +86,7 @@
     </div>
     {#if available}
         <p style='text-align: center'>Getting prices...</p>
+    {:else}
+        <p style='text-align: center'>Checking availability...</p>
     {/if}
 {/if}

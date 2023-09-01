@@ -21,16 +21,23 @@ export async function GET({ request }: RequestEvent) {
     const prices: Array<PriceResponse> = [];
 
     const domain = params.get('domain') ?? '';
+    const isPremium = params.get('premium') ?? false;
 
     const queries = [
         queryGoDaddy(domain),
         queryNameSilo(domain),
-        queryNamecheap(domain),
-        queryHover(domain),
-        querySquarespace(domain),
-        queryCloudflare(domain),
         queryNameDotCom(domain)
     ];
+
+    // The database doesn't always give correct prices for premium domains.
+    if(!isPremium){
+        queries.push(
+            queryNamecheap(domain),
+            queryHover(domain),
+            querySquarespace(domain),
+            queryCloudflare(domain)
+        )
+    }
 
     await Promise.allSettled(queries).then((results) =>
         results.forEach((result) => {
