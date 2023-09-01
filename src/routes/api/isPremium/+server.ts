@@ -10,5 +10,5 @@ export async function GET({ request }: RequestEvent) {
     }
 
     const domain = params.get('domain')
-    return {premium: await checkPremium(domain ?? "")}
+    return json({premium: await checkPremium(domain ?? "")})
 }

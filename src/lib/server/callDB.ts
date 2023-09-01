@@ -3,7 +3,7 @@ import { DATABASE_URL } from "$env/static/private";
 import * as fs from "fs";
 
 const client = new Client(
-  {connectionString: DATABASE_URL, ssl: {rejectUnauthorized: true, ca: fs.readFileSync('./ca.pem').toString()}})
+  {connectionString: DATABASE_URL, ssl: {rejectUnauthorized: true}})
 await client.connect();
 
 interface ResultRow {

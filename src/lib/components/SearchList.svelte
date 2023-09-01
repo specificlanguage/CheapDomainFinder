@@ -12,14 +12,14 @@
     let searched_domain: string | undefined = undefined;
     let loading = false;
     let available: boolean | undefined = undefined;
-    let isPremiumDomain: boolean | undefined = undefined;
+    let isPremium: boolean | undefined = undefined;
 
     results.sort((r1, r2) => r1.price - r2.price);
 
     async function findAvailability() {
         results = [];
         available = undefined;
-        isPremiumDomain = undefined;
+        isPremium = undefined;
 
         if ($domain === '') {
             return;
@@ -27,7 +27,6 @@
         loading = true;
         const res = await fetcher(`api/isAvailable?domain=${$domain}`).then((r) => r);
         searched_domain = $domain;
-        // console.log(res, res.isAvailable)
         if (!res.available) {
             available = false;
             loading = false;
@@ -38,8 +37,8 @@
     }
 
     async function getPrices() {
-        const {isPremium} = await fetch(`api/isPremium?domain=${domain}`).then(r => r.json())
-        isPremiumDomain = isPremium;
+        const {premium} = await fetch(`api/isPremium?domain=${$domain}`).then(r => r.json())
+        isPremium = premium;
         const res = await fetch(`api/prices?domain=${$domain}&premium=${isPremium}`).then(r => r.json())
         res.prices.sort((r1, r2) => r1.price - r2.price);
         results = res.prices;
@@ -62,15 +61,17 @@
 {:else if available}
     <div class="available-box">
         <div class="available-text">
-            {searched_domain} is available!
+            <b>{searched_domain}</b> is available!
             <br/>
+            <div style="font-size: 16px">
             Please note that prices may vary on the registrar's page. Prices are listed as rates per year.
+            </div>
         </div>
     </div>
-    {#if isPremiumDomain}
+    {#if isPremium}
         <div class='notice-box'>
             <div class='notice-text'>
-                This is a <b>premium domain</b>; prices are marked up significantly, and not all registrar prices are listed here. Consider choosing a different domain title.
+                This is a <b>premium domain</b>; prices are marked up significantly, and not all registrar prices are listed here. Consider searching for something else.
             </div>
         </div>
     {/if}

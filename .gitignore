@@ -12,3 +12,7 @@ vite.config.ts.timestamp-*
 .idea
 *.pem
 /data/*.csv
+.env*
+.flaskenv*
+!.env.project
+!.env.vault

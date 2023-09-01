@@ -21,7 +21,7 @@ export async function GET({ request }: RequestEvent) {
     const prices: Array<PriceResponse> = [];
 
     const domain = params.get('domain') ?? '';
-    const isPremium = params.get('premium') ?? false;
+    const isPremium = params.get('premium') === "true";
 
     const queries = [
         queryGoDaddy(domain),
