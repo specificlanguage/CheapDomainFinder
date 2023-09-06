@@ -16,7 +16,7 @@ import { queryForTLD } from '$lib/server/callDB.js';
 export async function queryGoDaddy(domain_name: string): Promise<PriceResponse | null> {
     let BASE_URL = 'https://api.ote-godaddy.com/';
     if (!dev) {
-        BASE_URL = 'https://api.godaddy.com';
+        BASE_URL = 'https://api.godaddy.com/';
     }
 
     const URL = BASE_URL + `v1/domains/available?domain=${domain_name}`;
