@@ -7,11 +7,7 @@
     <span class="icon">
         <Icon icon="material-symbols:chevron-left" style="font-size: 48px; display: inline" />
     </span>
-    <img
-        alt=""
-        class="home-image inline"
-        src="https://speclang-personal.s3.amazonaws.com/OnlineImage.jpeg"
-    />
+    <img alt="" class="home-image inline" src="/speclang.jpg" />
     <p class="inline back-text">Back to <b>speclang.dev</b></p>
 </a>
 
