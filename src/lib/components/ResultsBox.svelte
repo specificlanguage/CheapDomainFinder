@@ -9,7 +9,11 @@
         <hr style="position: inherit" />
         <li class="single-result">
             <div class="align-left">
-                <img class="result-image" src={'/' + res.registrar + '.png'} alt={res.registrar} />
+                <img
+                    class="result-image"
+                    src={'/domains/' + res.registrar + '.png'}
+                    alt={res.registrar}
+                />
             </div>
             <div class="result-button align-right">
                 {#if res.renewPrice !== undefined}

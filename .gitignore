@@ -17,3 +17,4 @@ vite.config.ts.timestamp-*
 !.env.project
 !.env.vault
 .vercel
+.netlify
